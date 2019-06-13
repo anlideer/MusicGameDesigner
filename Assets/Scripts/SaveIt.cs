@@ -181,10 +181,13 @@ public class SaveIt : MonoBehaviour
     void TransferObjtoData()
     {
         loadedData.iconList = new List<MusicIcon>();    // 先清空，重新填东西
+        objList.Clear();
         GameObject[] clickIcons = GameObject.FindGameObjectsWithTag("clickIcon");
         GameObject[] lastIcons = GameObject.FindGameObjectsWithTag("lastIcon");
         ObjListToData(clickIcons);
         ObjListToData(lastIcons);
+        //Debug.Log("iconList: " + loadedData.iconList.Count);
+        //Debug.Log("objList: " + objList.Count);
         // 处理前置节点、后置节点的事情
         DealWithRelated();
         // 排序
@@ -206,6 +209,7 @@ public class SaveIt : MonoBehaviour
             tmpMusicIcon.pos = tmpPos;
             tmpMusicIcon.code = objList.Count + 1;
             loadedData.iconList.Add(tmpMusicIcon);
+            //Debug.Log(tmpMusicIcon.type);
             objList.Add(obj);
         }
     }
@@ -237,6 +241,8 @@ public class SaveIt : MonoBehaviour
                 }
                 else
                 {
+                    //Debug.Log("nextP" + nextP);
+               
                     loadedData.iconList[i].nextPoint = loadedData.iconList[nextP].code;
                 }
             }
