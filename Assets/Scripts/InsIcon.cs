@@ -76,7 +76,9 @@ public class InsIcon : MonoBehaviour
             }
             else    // 长按式
             {
-                GameObject tmpobj = Instantiate(lastIconPrefab, vec, transform.rotation);
+                Vector3 v = vec;
+                v.z = -1;
+                GameObject tmpobj = Instantiate(lastIconPrefab, v, transform.rotation);
                 tmpobj.transform.parent = transform;
                 tmpobj.GetComponent<EditIcon>().type = true;
                 tmpobj.GetComponent<EditIcon>().track = GetComponent<Metre>().trackNo;
@@ -115,7 +117,9 @@ public class InsIcon : MonoBehaviour
             }
             else    // 长按式
             {
-                GameObject tmpobj = Instantiate(lastIconPrefab, resPos, transform.rotation);
+                Vector3 tmpv = resPos;
+                tmpv.z = -1;
+                GameObject tmpobj = Instantiate(lastIconPrefab, tmpv, transform.rotation);
                 tmpobj.transform.parent = transform;
                 tmpobj.GetComponent<EditIcon>().type = true;
                 tmpobj.GetComponent<EditIcon>().track = GetComponent<Metre>().trackNo;

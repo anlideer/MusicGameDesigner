@@ -111,6 +111,7 @@ public class SaveIt : MonoBehaviour
                 Transform right = metre.transform.Find("Right");
                 Vector3 v = left.position;
                 v.x += (icon.pos - metre.transform.parent.GetComponent<SixMetre>().metreNum) * Vector3.Distance(left.position, right.position);
+                v.z = -1;
                 GameObject iconObj;
                 // 点击式
                 if (icon.type == false)

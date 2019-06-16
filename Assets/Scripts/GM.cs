@@ -19,11 +19,11 @@ public class IconObj
 
 public class GM : MonoBehaviour
 {
-    public static int bpm = 90;    // 换音乐了再重新设
+    public static float bpm = 63.745f;    // 换音乐了再重新设
     public static int barNumber;
     public AudioSource music;
     public static float musicLen;
-    public int barNum = 36;
+    public int barNum = 39;
     public static float firstMetre = 0;
     public static bool isPlayingMusic = false;
     public static bool mode = false;    //  false - 点击式，true - 长按式
